@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>MyWeather | Home</title>
+  </head>
+  <body>
+    <header>
+        <div class="jumbotron text-center" style="background-color: cadetblue;">
+            <div class="container">
+                <h1>Welcome To MyWeather App</h1>
+                <p>Powered by <strong>OpenWeatherAPI</strong></p>
+                <a href="https://openweathermap.org/" class="btn btn-primary" target="_blank">Read More</a>
+            </div>
+        </div>
+    </header>
+    <main>
+      <!-- Messages -->
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto">
+            {% if messages %}
+                <ul class="messages list-unstyled">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!-- FORM -->
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto">
+            <form action="" method="post">
+              {% csrf_token %}
+              {{form.city_name}}
+              <button type="submit" class="btn btn-success btn-sm">Add City</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!-- DATA -->
+      <div class="container">
+        {% for city_weather in city_weather_list %}
+          <div class="media">
+            <img class="align-self-center mr-3" src='http://openweathermap.org/img/wn/{{city_weather.icon}}@2x.png' alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0">{{city_weather.city}}, {{city_weather.country}}</h5>
+              <p>{{city_weather.temperature}}</p>
+              <p class="mb-0">{{city_weather.description}}</p>
+            </div>
+          </div>
+          <hr>
+        {% endfor %}
+      </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
