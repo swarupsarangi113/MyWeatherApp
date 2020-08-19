@@ -10,16 +10,16 @@ Credit :clap: - [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0
 ___
 
 1. HomePage\
-![HomePage]()
+![HomePage](https://github.com/swarupsarangi113/MyWeatherApp/blob/master/Previews/homepage.png)
 
 1. Add a City\
-![Add City]()
+![Add City](https://github.com/swarupsarangi113/MyWeatherApp/blob/master/Previews/add_city.png)
 
 1. Add an existing City\
-![add duplicate city]()
+![add duplicate city](https://github.com/swarupsarangi113/MyWeatherApp/blob/master/Previews/add_duplicate_city.png)
 
 1. Add a invalid city\
-![add invalid city]()
+![add invalid city](https://github.com/swarupsarangi113/MyWeatherApp/blob/master/Previews/add_gibberish.png)
 
 1. Delete a City\
-![delete city]()
+![delete city](https://github.com/swarupsarangi113/MyWeatherApp/blob/master/Previews/delete_city.png)
