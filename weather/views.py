@@ -62,4 +62,6 @@ def delete_city(request,name) :
 
     City.objects.filter(city_name=name).delete()
 
+    messages.success(request,f'{name} deleted !')
+
     return redirect('home')
