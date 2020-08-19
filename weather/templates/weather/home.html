@@ -57,6 +57,7 @@
               <h5 class="mt-0">{{city_weather.city}}, {{city_weather.country}}</h5>
               <p>{{city_weather.temperature}}</p>
               <p class="mb-0">{{city_weather.description}}</p>
+              <a href="{% url 'delete_city' city_weather.city %}"><button class="btn btn-danger btn-sm float-right">Delete</button></a>
             </div>
           </div>
           <hr>

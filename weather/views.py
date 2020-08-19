@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import City
 from .forms import AddCityForm
 from django.contrib import messages
@@ -26,6 +26,8 @@ def home(request) :
                 messages.warning(request,f'{data} already present !')
             else :
                 messages.warning(request,'Please try again !')
+            
+            return redirect('home')
     
     form = AddCityForm()
 
@@ -55,3 +57,9 @@ def home(request) :
     }
 
     return render(request,'weather/home.html',context)
+
+def delete_city(request,name) :
+
+    City.objects.filter(city_name=name).delete()
+
+    return redirect('home')
